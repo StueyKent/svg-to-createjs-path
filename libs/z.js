@@ -3,8 +3,8 @@
 import Command from './command.js';
 
 export default class Z extends Command {
-  constructor(command) {
-    super(command);
-    
+  constructor(path) {
+    const _command = "Z";
+    super(_command, path);
   }
 }

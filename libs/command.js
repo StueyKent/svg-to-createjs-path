@@ -1,19 +1,21 @@
 'use strict';
 
+import CommandArray from './commandArray.js';
 export default class Command {
-  constructor(command) {
-    this.isReative = this.relative(command);
-    this.points = this.getPoints(command);
+  constructor(command, path) {
+    this.isReative = this.relative(path);
+    this.points = new CommandArray(...this.getPoints(path)).convertToNumbers();
+    this.command = command;
 
-    console.log(this.points);
+    console.log(this.command, this.points);
   }
 
-  relative(command) {
-    command = command.charAt(0) 
-    return command == command.toUpperCase()
+  relative(path) {
+    let command = path.charAt(0); 
+    return command == command.toUpperCase();
   }
 
-  getPoints(command) {
-    return command.slice(1, command.length).split(/(?=[ -])/);
+  getPoints(path) {
+    return path.slice(1, path.length).split(/(?=[ -])/);
   }
 };

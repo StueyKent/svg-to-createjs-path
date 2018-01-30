@@ -3,8 +3,8 @@
 import Command from './command.js';
 
 export default class L extends Command {
-  constructor(command) {
-    super(command);
-    
+  constructor(path) {
+    const _command = "L";
+    super(_command, path);
   }
 }

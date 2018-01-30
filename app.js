@@ -51,3 +51,23 @@ app.parse(path);
 //Q or q - quadratic Bézier curveto - (x1 y1 x y)+
 //T or t - Shorthand/smooth quadratic Bézier curveto - (x y)+
 //A or a - elliptical arc - (rx ry x-axis-rotation large-arc-flag sweep-flag x y)+
+
+
+// class Array2 extends Array {
+//   constructor(items) {
+//     console.log("arguments", ...arguments)
+//     super(...items);
+//   }
+
+//   addOne() {
+//     console.log("map runs creating a new Array2")
+//     return this.map( (x) => {
+//       return x+1;
+//     } );
+//   }
+// }
+
+// const array2 = new Array2([9,1,4,0]);
+// console.log(array2);
+// console.log(array2.addOne());
+
