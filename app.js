@@ -15,7 +15,7 @@ class App {
   constructor() {
     this.commandClasses = { M, Z, L, H, V, C, S, Q, T, A };
     this.path = '';
-  
+    this.string = '';
   }
 
   parse(path) {
@@ -26,6 +26,14 @@ class App {
       let CommandClass = this.commandClassFactory(command.charAt(0).toUpperCase());
       return new CommandClass(command);
     });
+
+    let string = '';
+
+    for(let func of funcs){
+      string += func.getCreateJsString();
+    }
+
+    console.log(string);
   }
 
   parseCommands(path) {
@@ -38,36 +46,6 @@ class App {
 }
 
 var app = new App();
-const path = 'M175.9 139.8c0 20-16.2 36.1-36.1 36.1H36.1c-20 0-36.1-16.2-36.1-36.1V36.1C0 16.2 16.2 0 36.1 0h103.7c20 0 36.1 16.2 36.1 36.1v103.7z';
+//const path = 'M175.9 139.8c0 20-16.2 36.1-36.1 36.1H36.1c-20 0-36.1-16.2-36.1-36.1V36.1C0 16.2 16.2 0 36.1 0h103.7c20 0 36.1 16.2 36.1 36.1v103.7z';
+  const path = 'M175.9 139.8c0 20-16.2 36.1-36.1 36.1z';
 app.parse(path);
-
-//M or m - moveto - (x y)+
-//Z or z - closepath - (none)
-//L or l - lineto - (x y)+
-//H or h - horizontal lineto - x+
-//V or v - vertical lineto - y+
-//C or c - curveto - (x1 y1 x2 y2 x y)+
-//S or s - shorthand/smooth curveto - (x2 y2 x y)+
-//Q or q - quadratic Bézier curveto - (x1 y1 x y)+
-//T or t - Shorthand/smooth quadratic Bézier curveto - (x y)+
-//A or a - elliptical arc - (rx ry x-axis-rotation large-arc-flag sweep-flag x y)+
-
-
-// class Array2 extends Array {
-//   constructor(items) {
-//     console.log("arguments", ...arguments)
-//     super(...items);
-//   }
-
-//   addOne() {
-//     console.log("map runs creating a new Array2")
-//     return this.map( (x) => {
-//       return x+1;
-//     } );
-//   }
-// }
-
-// const array2 = new Array2([9,1,4,0]);
-// console.log(array2);
-// console.log(array2.addOne());
-
