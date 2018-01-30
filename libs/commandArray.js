@@ -10,6 +10,6 @@ export default class CommandArray extends Array {
   }
 
   chunk() {
-
+    //http://www.frontcoded.com/splitting-javascript-array-into-chunks.html
   }
 }
