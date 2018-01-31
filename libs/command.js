@@ -4,7 +4,7 @@ import CommandArray from './commandArray.js';
 export default class Command {
   constructor(command, path) {
     this.isReative = this.relative(path);
-    this.points = new CommandArray(...this.getPoints(path)).convertToNumbers();
+    this.points = new CommandArray(...this.getPoints(path)).convertToNumbers().clean();
     this.command = command;
   }
 
@@ -17,8 +17,8 @@ export default class Command {
     return path.slice(1, path.length).split(/(?=[ -])/);
   }
 
-  getCreateJsString() {
+  parse(prevPoint) {
     let string = '';
-    return string;
+    return {string: string};
   }
 };

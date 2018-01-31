@@ -10,7 +10,7 @@ export default class C extends Command {
     this.points = this.points.chunk(6);
   }
 
-  getCreateJsString() {
+  getCreateJsString(p) {
     
     let prevPoint = null;
     let string = '';

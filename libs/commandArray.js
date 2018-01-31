@@ -19,4 +19,10 @@ export default class CommandArray extends Array {
     
     return chunks;
   }
+
+  clean() {
+    return this.filter((item)=>{  
+      return !isNaN(parseFloat(item))
+    })
+  }
 }

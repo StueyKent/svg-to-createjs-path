@@ -8,12 +8,101 @@
   <meta name="description" content="Takes in a SVG path and converts it to a Create Js graphics object">
   <meta name="author" content="StueyKent">
 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+
+  <style>
+
+    html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #00C9FF;  
+      background: -webkit-linear-gradient(135deg, #92FE9D, #00C9FF);  
+      background: linear-gradient(135deg, #92FE9D, #00C9FF);
+      min-height: 100%; 
+    }
+
+    *, *:before, *:after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif; 
+      color: #2b2b2b;
+    }
+
+    main {
+      padding: 5rem;
+      /* max-width: 80%; */
+      /* margin: 0 auto; */
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .PathInput-input {
+      width: 100%;
+      padding: 1.25rem 1rem;
+      border: 0;
+      min-height: 8rem;
+    }
+
+    .PathInput-button {
+      width: 100%;
+      padding: 1rem;
+      border: 0;
+      background: #00C9FF;
+      text-transform: uppercase;
+      transition: background 200ms ease-in-out;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .PathInput-button:hover {
+      background: #00b4e5;
+    }
+
+    #CanvasExample-stage {
+      background: #f5f5f5;
+      /* width: 100%; */
+    }
+  </style>
 </head>
 
 <body>
-<main>
-<h1>Good things are comming</h1>
-</main>
+  <main>
+    <h1>SVG to CreateJs Path</h1>
+
+    <section class="PathInput">
+        <h2>SVG Path Input</h2>
+        <p>Example path: M200 100l0 100-100 0 0-100 100 0z</p>
+        <textarea class="PathInput-input"></textarea>
+        <button type="button" class="PathInput-button">Convert</button>
+    </section>
+
+    <section class="Code">
+      <h2>CreateJs Graphics Code</h2>
+      
+      <div class="Code-output">Enter a path to view the code.</div>
+    </section>
+    <section class="CanvasExample">
+      <h2>Example</h2>
+      <canvas id="CanvasExample-stage" width="720" height="480"></canvas>
+    </section>
+  </main>
+
+  <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
   <script type="module" src="libs/commandArray.js"></script>
   <script type="module" src="libs/command.js"></script>
   <script type="module" src="libs/m.js"></script>

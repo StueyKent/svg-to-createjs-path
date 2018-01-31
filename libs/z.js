@@ -12,16 +12,8 @@ export default class Z extends Command {
   }
 
   
-  getCreateJsString() {
+  parse(prevPoint) {
     let string = 'graphic.endFill();';
-    return string;
+    return {string: string};
   }
 }
-
-// endFill () Graphics chainable
-// Defined in endFill:682
-
-// Ends the current sub-path, and begins a new one with no fill. Functionally identical to beginFill(null). A tiny API method "ef" also exists.
-
-// Returns:
-// Graphics: The Graphics instance the method is called on (useful for chaining calls.)

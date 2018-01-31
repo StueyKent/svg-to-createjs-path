@@ -11,39 +11,19 @@ export default class M extends Command {
     this.points = this.points.chunk(2);
   }
 
-  getCreateJsString() {
-
-    let prevPoint = null;
+  parse(prevPoint) {
     let string = '';
 
-    for(let point of this.points) {
-      let x = point[0];
-      let y = point[1];
-
+    for(let pointArray of this.points) {
+      let point = {x: pointArray[0], y: pointArray[1]}
       if(this.isReative && prevPoint) {
-        x = prevPoint[0] + point[0];
-        y = prevPoint[1] + point[1];
+        point.x += prevPoint.x;
+        point.y += prevPoint.y;
       }
-
-
-      string += `graphic.moveTo(${x},${y});\n`;
-
+      string += `graphic.moveTo(${point.x},${point.y});\n`;
       prevPoint = point;
     }
 
-    return string;
+    return {string: string, lastPoint: prevPoint};
   }
 }
-
-// moveTo ( x  y ) Graphics chainable
-// Defined in moveTo:454
-
-// Moves the drawing point to the specified position. A tiny API method "mt" also exists.
-
-// Parameters:
-// x Number
-// The x coordinate the drawing point should move to.
-// y Number
-// The y coordinate the drawing point should move to.
-// Returns:
-// Graphics: The Graphics instance the method is called on (useful for chaining calls).
