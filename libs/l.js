@@ -8,7 +8,6 @@ export default class L extends Command {
     const _command = "L";
     super(_command, path);
     this.points = this.points.chunk(2);
-    console.log(this.points)
   }
 
   parse(prevPoint) {
