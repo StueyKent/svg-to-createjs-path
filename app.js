@@ -80,6 +80,9 @@ class App {
 }
 
 var app = new App();
-//const path = 'M175.9 139.8c0 20-16.2 36.1-36.1 36.1H36.1c-20 0-36.1-16.2-36.1-36.1V36.1C0 16.2 16.2 0 36.1 0h103.7c20 0 36.1 16.2 36.1 36.1v103.7z';
-//const path = 'M200 100l0 100-100 0 0-100 100 0z';
-//app.convert(path);
+
+//TODO
+//AQST
+
+//DONE
+//MHLVZC

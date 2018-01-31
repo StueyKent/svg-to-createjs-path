@@ -10,35 +10,24 @@ export default class C extends Command {
     this.points = this.points.chunk(6);
   }
 
-  getCreateJsString(p) {
-    
-    let prevPoint = null;
+  parse(prevPoint) {
     let string = '';
 
-    for(let point of this.points) {
-      let x1 = point[0];
-      let y1 = point[1];
-      let x2 = point[2];
-      let y2 = point[3];
-      let x = point[4];
-      let y = point[5];
-
+    for(let pointArray of this.points) {
+      let point = {x1: pointArray[0], y1: pointArray[1], x2: pointArray[2], y2: pointArray[3], x: pointArray[4], y: pointArray[5]}
       if(this.isReative && prevPoint) {
-        x1 = prevPoint[0] + point[0];
-        y1 = prevPoint[1] + point[1];
-        x2 = prevPoint[2] + point[2];
-        y2 = prevPoint[3] + point[3];
-        x = prevPoint[4] + point[4];
-        y = prevPoint[5] + point[5];
+        point.x1 += prevPoint.x;
+        point.y1 += prevPoint.y;
+        point.x2 += prevPoint.x;
+        point.y2 += prevPoint.y;
+        point.x += prevPoint.x;
+        point.y += prevPoint.y;
       }
-
-
-      string += `graphic.bezierCurveTo(${x1},${y1},${x2},${y2},${x},${y});\n`;
-
+      string += `graphic.bezierCurveTo(${point.x1},${point.y1},${point.x2},${point.y2},${point.x},${point.y});\n`;
       prevPoint = point;
     }
 
-    return string;
+    return {string: string, lastPoint: prevPoint};
   }
 }
 
