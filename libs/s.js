@@ -28,7 +28,7 @@ export default class S extends Command {
         point.y = this.round(point.y + prevPoint.y, 3);
 
       }
-      string += `graphic.bezierCurveTo(${point.x1}, ${point.y1}, ${point.x2}, ${point.y2}, ${point.x}, ${point.y});;\n`;
+      string += `graphic.bezierCurveTo(${point.x1}, ${point.y1}, ${point.x2}, ${point.y2}, ${point.x}, ${point.y});\n`;
       prevPoint = point;
     }
 

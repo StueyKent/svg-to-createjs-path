@@ -18,14 +18,21 @@ class App {
     this.dom = this.cacheDom();
 
     this.dom.button.addEventListener('click', this.convert.bind(this));
+    this.dom.codeButton.addEventListener('click', this.showHide.bind(this));
   }
 
   cacheDom(){
     return {
       'input': document.querySelector('.PathInput .PathInput-input'),
       'button': document.querySelector('.PathInput .PathInput-button'),
-      'code': document.querySelector('.Code .Code-output')
+      'code': document.querySelector('.Code .Code-output'),
+      'codeButton': document.querySelector('.Code .Code-button')
     }
+  }
+
+  showHide() {
+    this.dom.code.classList.toggle('Hidden');
+    this.dom.codeButton.innerText = (this.dom.code.classList.contains('Hidden')) ? 'Show' : 'Hide';
   }
 
   convert() {
