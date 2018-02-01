@@ -20,7 +20,7 @@ export default class M extends Command {
         point.x += prevPoint.x;
         point.y += prevPoint.y;
       }
-      string += `graphic.moveTo(${point.x},${point.y});\n`;
+      string += `graphic.moveTo(${point.x}, ${point.y});\n`;
       prevPoint = point;
     }
 

@@ -22,8 +22,6 @@ export default class CommandArray extends Array {
 
   clean() {
     return this.filter((item)=>{  
-      console.log(item)
-
       return !isNaN(parseFloat(item))
     })
   }

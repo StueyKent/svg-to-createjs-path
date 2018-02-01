@@ -18,7 +18,7 @@ export default class V extends Command {
       if(this.isReative && prevPoint) {
         point.y += prevPoint.y;
       }
-      string += `graphic.lineTo(${point.x},${point.y});\n`;
+      string += `graphic.lineTo(${point.x}, ${point.y});\n`;
       prevPoint = point;
     }
 

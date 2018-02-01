@@ -19,7 +19,7 @@ export default class L extends Command {
         point.x += prevPoint.x;
         point.y += prevPoint.y;
       }
-      string += `graphic.lineTo(${point.x},${point.y});\n`;
+      string += `graphic.lineTo(${point.x}, ${point.y});\n`;
       prevPoint = point;
     }
 

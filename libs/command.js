@@ -14,11 +14,16 @@ export default class Command {
   }
 
   getPoints(path) {
-    return path.slice(1, path.length).split(/(?=[ -])/);
+    return path.slice(1, path.length).match(/-?\d*(\.\d+)?/g)
   }
 
   parse(prevPoint) {
     let string = '';
     return {string: string};
+  }
+
+  round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
   }
 };
