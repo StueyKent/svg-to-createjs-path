@@ -82,7 +82,7 @@ class App {
 var app = new App();
 
 //TODO
-//AQST
+//AQT
 
 //DONE
-//MHLVZC
+//MHLVZCS

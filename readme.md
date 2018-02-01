@@ -1,6 +1,6 @@
 # SvgToCreateJsPath
 
-This is a little project to convert svg paths into CreateJs graphics markup. Still a work in progress but it can be used right now for some paths. 
+This is a little project to convert svg paths into CreateJs graphics markup. Still a work in progress as some commands are missing but it can be used right now for some simple paths. 
 
 Feel free to contribute, to finish it or and make improvments.
 
@@ -14,7 +14,7 @@ In all cases, absolute coordinates follow capital letter commands and relative c
 
 ## Known Issues 
 - Will only run in browsers which support ES6 modules. 
-- 'AQST' Commands have not yet been completed.
+- 'AQT' Commands have not yet been completed.
 
 ## Useful Links
 

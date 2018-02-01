@@ -16,7 +16,7 @@ export default class V extends Command {
     for(let pointArray of this.points) {
       let point = {x: prevPoint.x, y: pointArray[0]}
       if(this.isReative && prevPoint) {
-        point.y += prevPoint.y;
+        point.y = this.round(point.y + prevPoint.y);
       }
       string += `graphic.lineTo(${point.x}, ${point.y});\n`;
       prevPoint = point;
